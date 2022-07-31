@@ -6,7 +6,7 @@ plugins {
 
 group 'com.mysite'
 version '1.0-SNAPSHOT'
-sourceCompatibility = '18'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
