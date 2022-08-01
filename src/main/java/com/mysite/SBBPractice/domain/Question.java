@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -23,6 +24,6 @@ public class Question {
 
     private LocalDateTime createDate;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE) // mappedBy: 참조 엔티티의 속성명. CascadeType.REMOVE -> 질문 삭제 시 답변들 모두 함께 삭제
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE) // mappedBy: 참조 엔티티의 속성명. CascadeType.REMOVE -> 질문 삭제 시 답변들 모두 함께 삭제
     private List<Answer> answerList;
 }
